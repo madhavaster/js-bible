@@ -94,16 +94,30 @@
 // };
 // str.greet();
 
-// EXAMPLE 9 using traditional/anonymous function declaration
+// // EXAMPLE 9 using traditional/anonymous function declaration
+// const str = {
+//     value : "Delayed greeting",
+//     greet : function(){
+//         console.log(this); //str object
+//         console.log(this.value); //"Delayed greeting"
+//         const self = this;
+//         setTimeout(function(){ //we lost this, we have self having this
+//             console.log(self); //str object
+//             console.log(self.value); //"Delayed greeting"
+//         },5000);      
+//     }
+// };
+// str.greet();
+
+// EXAMPLE 10 using arrow function declaration
 const str = {
     value : "Delayed greeting",
     greet : function(){
         console.log(this); //str object
         console.log(this.value); //"Delayed greeting"
-        const self = this;
-        setTimeout(function(){ //we lost this, we have self having this
-            console.log(self); //str object
-            console.log(self.value); //"Delayed greeting"
+        setTimeout(()=>{ 
+            console.log(this); //str object
+            console.log(this.value); //"Delayed greeting"
         },5000);      
     }
 };
