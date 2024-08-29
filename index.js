@@ -1,35 +1,22 @@
-// // EXAMPLE 1 - Object literal
-// const str = {
-//     value : 10,
-//     // info : ()=>{
-//     //     console.log(this); // global object
-//     //     console.log(this.value); // undefined
-//     // }
-//     info : function(){
-//         console.log(this); // global object
-//         console.log(this.value); // undefined
-//     }
-// };
-// str.info();
-
-// // EXAMPLE 2 - function constructor
-// function GroceryItem(title,kind){
-//     this.title = title;
-//     this.kind = kind;
+// // regular function expression arguments
+// function sum(){
+//     console.log(arguments);
+//     console.log(typeof arguments);
+//     const argumentsArray = Array.from(arguments);
+//     console.log(Array.from(arguments));
+//     console.log(argumentsArray.length);
 // }
 
-// const apple = new GroceryItem("Apple","Fruit");
-// const onion = new GroceryItem("Onion","Vegetable");
-// console.log(apple);
-// console.log(onion);
+// sum(1,2,3,4);
 
-// EXAMPLE 3 - function constructor using arrow function
-const GroceryItem = (title,kind)=>{
-    this.title = title;
-    this.kind = kind;
+// arrow function arguments
+const sum = (...args)=>{
+    console.log(args);
+    // console.log(typeof arguments);
+    // console.log(Array.isArray(arguments));
+    // const argumentsArray = Array.from(arguments);
+    // console.log(Array.from(arguments));
+    // console.log(argumentsArray.length);
 }
 
-const apple = new GroceryItem("Apple","Fruit"); //TypeError: GroceryItem is not a constructor
-const onion = new GroceryItem("Onion","Vegetable"); //TypeError: GroceryItem is not a constructor
-console.log(apple);
-console.log(onion);
+sum(1,2,3,4);
