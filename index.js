@@ -1,22 +1,13 @@
-// // regular function expression arguments
-// function sum(){
-//     console.log(arguments);
-//     console.log(typeof arguments);
-//     const argumentsArray = Array.from(arguments);
-//     console.log(Array.from(arguments));
-//     console.log(argumentsArray.length);
+// // for loop example
+// const myArray = [1,true,"abc"];
+// for(let i=0;i<myArray.length;i++){
+//     console.log(myArray[i]);
 // }
 
-// sum(1,2,3,4);
+// // forEach helper method
+// const myArray = [1,true,"abc"];
+// myArray.forEach(element=>console.log(element));
 
-// arrow function arguments
-const sum = (...args)=>{
-    console.log(args);
-    // console.log(typeof arguments);
-    // console.log(Array.isArray(arguments));
-    // const argumentsArray = Array.from(arguments);
-    // console.log(Array.from(arguments));
-    // console.log(argumentsArray.length);
-}
-
-sum(1,2,3,4);
+// forEach with index
+const myCities = ["Hyderabad","Bangalore","Pune"];
+myCities.forEach((city,index)=>console.log(`${city} is at index ${index} in myCities array`));
