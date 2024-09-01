@@ -1,13 +1,15 @@
-// // for loop example
-// const myArray = [1,true,"abc"];
-// for(let i=0;i<myArray.length;i++){
-//     console.log(myArray[i]);
-// }
+// // map array helper method
+// const myArray = [1,2,3];
+// const myNewArray = myArray.map(element=>Math.pow(element,2));
+// console.log(myNewArray);
 
-// // forEach helper method
-// const myArray = [1,true,"abc"];
-// myArray.forEach(element=>console.log(element));
+const postsJson = [
+    '{ "postId": 1234, "comments": 10 }',
+    '{ "postId": 1235, "comments": 30 }'
+];
+console.log(postsJson);
 
-// forEach with index
-const myCities = ["Hyderabad","Bangalore","Pune"];
-myCities.forEach((city,index)=>console.log(`${city} is at index ${index} in myCities array`));
+// const postsArray = postsJson.map(post=>JSON.parse(post));
+const postsArray = postsJson.map(JSON.parse);
+
+console.log(postsArray[0].postId);
