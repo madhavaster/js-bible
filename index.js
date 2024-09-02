@@ -1,15 +1,15 @@
-// // map array helper method
-// const myArray = [1,2,3];
-// const myNewArray = myArray.map(element=>Math.pow(element,2));
-// console.log(myNewArray);
+// // find() array helper method
+// const myArray = [10,[],{},true,"abc",20];
+// const result = myArray.find(element => typeof element === "string");
+// console.log(result);
 
-const postsJson = [
-    '{ "postId": 1234, "comments": 10 }',
-    '{ "postId": 1235, "comments": 30 }'
+const postsArray = [
+    {postId:1,comments:10},
+    {postId:2,comments:20},
+    {postId:3,comments:30},
+    {postId:4,comments:40}
 ];
-console.log(postsJson);
 
-// const postsArray = postsJson.map(post=>JSON.parse(post));
-const postsArray = postsJson.map(JSON.parse);
+const findSinglePost = (postId,postsArray)=>postsArray.find(post => post.postId==postId);
 
-console.log(postsArray[0].postId);
+console.log(findSinglePost(5,postsArray));
